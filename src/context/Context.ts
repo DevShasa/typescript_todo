@@ -1,8 +1,4 @@
 import React from "react";
 
-interface appContext{
-    contextData?:{}
-}
-
-const Context = React.createContext<appContext>({})
+const Context = React.createContext({})
 export default Context
