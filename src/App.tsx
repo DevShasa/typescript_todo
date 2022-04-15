@@ -25,7 +25,7 @@ const App: React.FC = () => {
     setTodoArray(todoArray.filter(todo=>todo.id !== id))
   }
 
-  // change the text of a todoitem 
+  // change the text of a todoitem
   const editTodo = (id:number, text:string) =>{
     let updatedTodo:Todo[] = todoArray.map(item =>{
       if(item.id === id){
