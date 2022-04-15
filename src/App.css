@@ -1,38 +1,54 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+/* .App {
   text-align: center;
+  overflow-y: scroll;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App::-webkit-scrollbar{
+  width:1.25rem;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App::-webkit-scrollbar-track{
+  background: #1e1e24
 }
+.App::-webkit-scrollbar-thumb{
+  background: #6649b8
+} */
 
-.App-header {
-  background-color: #282c34;
+.App{
+  width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
+  /* Flex direction is column 
+    so align items center will put items 
+    at center of page \
+  */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #2f74c0;
+  font-family: "Neucha", cursive;
+}
+
+.heading{
+  text-transform: uppercase;
+  font-size: 40px;
+  margin:30px 0;
   color: white;
+  z-index: 1; /* hmm */
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-width: 800px){
+  /* styles in here for mobile  */
+  .heading{
+    margin: 15px 0;
+    font-size: 35px;
   }
 }
+
+/* .tempdiv{
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 2px;
+  font-size: 20px;
+  text-align: left;
+  background-color: white;
+} */
