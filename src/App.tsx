@@ -3,6 +3,8 @@ import './App.css';
 import InputField from "./components/InputField";
 import { Todo } from "./model";
 import TodoList from "./components/TodoList";
+import Context from "./context/Context"; 
+
 
 const App: React.FC = () => {
 
@@ -52,11 +54,21 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="App">
-      <span className = "heading">Taskify</span>
-      <InputField todo={todo} setTodo={setTodo} addNewTodo={addNewTodo}/>
-      <TodoList todoArray={todoArray} setTodoArray={setTodoArray}/>
-    </div>
+    <Context.Provider
+      value ={{
+        complete: completeTodo,
+        add: addNewTodo,
+        edit: editTodo,
+        delete: deleteTodo,
+        array_of_todos: todoArray
+      }}
+    >
+      <div className="App">
+        <span className = "heading">Taskify</span>
+        <InputField todo={todo} setTodo={setTodo} addNewTodo={addNewTodo}/>
+        <TodoList  setTodoArray={setTodoArray}/>
+      </div>
+    </Context.Provider>
   );
 }
 
