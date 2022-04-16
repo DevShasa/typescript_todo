@@ -44,7 +44,7 @@ const App: React.FC = () => {
       setTodoArray(
         [ ...todoArray, 
           {
-            id: Math.floor((Math.random()*100) + 1),
+            id: Math.floor((Math.random()*1000) + 1),
             todo,
             isDone: false
           },
@@ -56,10 +56,10 @@ const App: React.FC = () => {
   return (
     <Context.Provider
       value ={{
-        complete: completeTodo,
+        completeTodo,
         add: addNewTodo,
         edit: editTodo,
-        delete: deleteTodo,
+        deleteTodo,
         array_of_todos: todoArray
       }}
     >

@@ -59,3 +59,21 @@
 .todos__single + .todos__single{
     margin-top: 15px
 }
+.todos__single__delete{
+    padding: 5px;
+    cursor:pointer;
+}
+.todos__single__delete:hover{
+    color:white;
+}
+.todos__single__complete{
+    margin-left:auto;
+    border-radius: 5px;
+    padding: 3px 4px;
+}
+.todos__single__complete:hover{
+    color:green;
+}
+.todos__single__isDone{
+    padding: 5px;
+}
