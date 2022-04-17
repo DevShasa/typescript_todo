@@ -1,10 +1,9 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import './styles.css';
 import { Todo } from '../model';
 import Context from "../context/Context";
 import { AiFillDelete } from 'react-icons/ai';
 import { BsCheckCircle } from 'react-icons/bs';
-
 
 interface Props{
     todoObj:Todo
@@ -12,7 +11,15 @@ interface Props{
 
 const TodoCard = ({todoObj}:Props)=>{
 
-    const { deleteTodo, completeTodo } =  useContext(Context)
+    const { deleteTodo, completeTodo, editTodo } =  useContext(Context)
+    const [edit, setEdit] = useState(false);
+    const [updatedText, setUpdatedText] = useState(todoObj.todo)
+
+    const submitHandler = (e: React.FormEvent)=>{
+        e.preventDefault();
+        editTodo(todoObj.id, updatedText)
+        setEdit(false)
+    }
 
     return(
         <div className="todos__single">
@@ -33,10 +40,26 @@ const TodoCard = ({todoObj}:Props)=>{
                     >
                         <BsCheckCircle/>
                     </span>
-            )}                 
-            <span>
-                {todoObj.todo}
-            </span>
+            )}
+
+            {edit 
+            ?(
+                <form onSubmit={(e) =>submitHandler(e)}>
+                    <input
+                        type = 'input'
+                        value = {updatedText}
+                        onChange = {(e)=> setUpdatedText(e.target.value)}
+                    />
+                    <button type="submit">
+                        change
+                    </button>
+                </form>
+            )
+            :(  <span onClick={()=>setEdit(true)} className="todos__text">
+                    {todoObj.todo}
+                </span>)
+            }
+
 
             {!todoObj.isDone &&(
                 <>

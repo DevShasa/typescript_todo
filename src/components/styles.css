@@ -77,3 +77,21 @@
 .todos__single__isDone{
     padding: 5px;
 }
+
+.todos__text{
+    padding:5px;
+    cursor:pointer;
+}
+.todos__single > form{
+    width: 70%;
+}
+.todos__single > form *{
+    padding: 5px;
+    margin-bottom:5px;
+    border-radius: 5px;
+    border:none;
+}
+.todos__single > form> input{
+    width: 80%;
+    margin-right:6px;
+}

@@ -58,7 +58,7 @@ const App: React.FC = () => {
       value ={{
         completeTodo,
         add: addNewTodo,
-        edit: editTodo,
+        editTodo,
         deleteTodo,
         array_of_todos: todoArray
       }}
