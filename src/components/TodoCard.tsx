@@ -55,7 +55,10 @@ const TodoCard = ({todoObj}:Props)=>{
                     </button>
                 </form>
             )
-            :(  <span onClick={()=>setEdit(true)} className="todos__text">
+            :(  <span onClick={()=>{
+                    if(!todoObj.isDone){setEdit(true)}
+                }} 
+                    className="todos__text">
                     {todoObj.todo}
                 </span>)
             }
